@@ -1,0 +1,41 @@
+.userContainer {
+    display: flex;
+    flex-direction: column;
+    padding: 18px 10px 0 10px;
+    color: white;
+    height: 100%;
+    width: 250px;
+    min-width: 170px;
+    overflow-y: auto;
+}
+
+.activeContainer {
+    word-break: break-all;
+}
+
+.activeItem {
+    display: flex;
+    align-items: center;
+}
+
+.activeItem img {
+    padding-left: 20px;
+    padding-right: 2px;
+    transform: translate(-25%, 15%);
+}
+
+.userContainer h1 {
+    font-size: 20px;
+    margin-bottom: 25px;
+}
+
+.userContainer h2 {
+    font-size: 18px;
+    font-weight: lighter;
+}
+
+@media screen and (max-width: 1100px) {
+    .userContainer {
+        display: none;
+    }
+}

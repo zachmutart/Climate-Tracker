@@ -1,0 +1,141 @@
+.location-marker {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+  
+.location-marker:hover {
+    cursor: pointer;
+    z-index: 1;
+}
+
+.drought-icon {
+    color: black;
+    font-size: 2rem;
+}
+
+.drought-icon:hover {
+    filter: drop-shadow(0 0 0.3rem black);
+    font-size: 2.5rem;
+}
+
+.dust-icon {
+    color: rgb(255, 166, 0);
+    font-size: 2.5rem;
+}
+
+.dust-icon:hover {
+    filter: drop-shadow(0 0 0.3rem rgb(255, 166, 0));
+    font-size: 3rem;
+}
+
+.quake-icon {
+    color:rgb(131, 0, 61);
+    font-size: 2rem;
+}
+
+.quake-icon:hover {
+    filter: drop-shadow(0 0 0.3rem rgb(131, 0, 61));
+    font-size: 2.5rem;
+}
+
+.flood-icon {
+    color: rgba(0, 0, 255, 0.89);
+    font-size: 1.5rem;
+}
+
+.flood-icon:hover {
+    filter: drop-shadow(0 0 0.3rem blue);
+    font-size: 2rem;
+}
+
+.slide-icon {
+    color: black;
+    font-size: 2rem;
+}
+
+.slide-icon:hover {
+    filter: drop-shadow(0 0 0.3rem black);
+    font-size: 2.5rem;
+}
+
+.man-icon {
+    color: rgb(255, 35, 182);
+    font-size: 2rem;
+}
+
+.man-icon:hover {
+    filter: drop-shadow(0 0 0.3rem rgb(255, 35, 182));
+    font-size: 2.5rem;
+}
+
+.ice-icon {
+    color: rgba(107, 53, 255, 0.76);
+    font-size: 1.6rem;
+}
+
+.ice-icon:hover {
+    filter: drop-shadow(0 0 0.3rem rgb(107, 53, 255));
+    font-size: 2.1rem;
+}
+
+.storm-icon {
+    color: rgba(124, 124, 124, 0.75);
+    font-size: 3rem;
+}
+
+.storm-icon:hover {
+    filter: drop-shadow(0 0 0.3rem black);
+    font-size: 3.75rem;
+}
+
+.snow-icon {
+    color:rgb(0, 183, 255);
+    font-size: 2rem;
+}
+
+.snow-icon:hover {
+    filter: drop-shadow(0 0 0.3rem rgb(0, 183, 255));
+    font-size: 2.5rem;
+}
+
+.heat-icon {
+    color: red;
+    font-size: 2rem;
+}
+
+.heat-icon:hover {
+    filter: drop-shadow(0 0 0.3rem red);
+    font-size: 2.5rem;
+}
+
+.volcano-icon {
+    color: rgb(134, 85, 85);
+    font-size: 1.5rem;
+}
+
+.volcano-icon:hover {
+    filter: drop-shadow(0 0 0.3rem rgb(189, 189, 189));
+    font-size: 2rem;
+}
+
+.water-icon {
+    color:blue;
+    font-size: 2rem;
+}
+
+.water-icon:hover {
+    filter: drop-shadow(0 0 0.3rem blue);
+    font-size: 2.5rem;
+}
+
+.fire-icon {
+    color: rgba(255, 72, 0, 0.719);
+    font-size: 2.5rem;
+}
+
+.fire-icon:hover {
+    filter: drop-shadow(0 0 0.3rem rgb(255, 72, 0));
+    font-size: 3rem;
+}

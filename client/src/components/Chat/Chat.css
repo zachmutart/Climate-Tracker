@@ -1,0 +1,128 @@
+.outerChatContainer {
+    display: flex;
+    justify-content: space-evenly;
+    height: calc(100vh - 80px);
+    background-color: rgb(22, 0, 77);
+    padding: 1%;
+}
+
+.innerLeftContainer {
+    display: flex;
+    height: 100%;
+    width: 50%;
+    margin-right: 0.5%;
+}
+
+.map {
+    height: 100%;
+    width: 100%;
+}
+
+.map > div {
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.innerRightContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
+    width: 50%;
+    margin-left: 0.5%;
+}
+
+.chatWrapper {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    width: 100%;
+    height: 50%;
+    border-radius: 20px;
+    margin-bottom: 1%;
+}
+
+.innerChatContainer {
+    display: flex;
+    flex-direction: column;
+    background: #FFFFFF;
+    border-radius: 20px;
+    height: 100%;
+    width: 100%;
+}
+
+.infoBoxWrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 50%;
+    margin-top: 1%;
+    background-color: grey;
+    padding: 20px;
+    border: 4px solid white;
+    border-radius: 20px;
+}
+
+.infoBoxWrapper > p {
+    font-size: 3rem;
+    color: white;
+}
+
+@media screen and (max-width: 1100px) {
+    .outerChatContainer {
+        padding: 0;
+    }
+
+    .innerChatContainer {
+        border-radius: 0;
+        width: 100%;
+    }
+
+    .infoBoxWrapper {
+        padding: 2.5px 0 0 5px;
+    }
+
+    .map > div {
+        border-radius: 0;
+    }
+}
+
+@media screen and (max-width: 830px) {
+    .outerChatContainer {
+        flex-direction: column;
+        height: calc(100vh - 80px);
+        overflow-y: auto;
+    }
+
+    .innerLeftContainer {
+        justify-self: flex-start;
+        width: 100%;
+        height: calc(50vh - 80px);
+    }
+
+    .innerRightContainer {
+        justify-self: flex-end;
+        width: 100%;
+        height: 50vh;
+        margin: 0;
+    }
+
+    .chatWrapper {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+    }
+
+    .innerChatContainer {
+        margin: 0;
+        padding: 0;
+        height: 100%;
+
+    }
+
+    .infoBoxWrapper {
+        display: none;
+    }
+
+}

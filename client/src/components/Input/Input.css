@@ -1,0 +1,66 @@
+.form {
+    display: flex;
+    border-top: 1px solid #c0c0c0;
+    max-height: 65px;
+    height: 65px;
+}
+
+.input {
+    resize: none;
+    border: none;
+    border-radius: 15px;
+    padding: 0 20px;
+    width: 80%;
+    font-size: 1.1em;
+    font-family: Arial, Helvetica, sans-serif;
+    max-height: 80px;
+}
+
+input:focus, textarea:focus, select:focus{
+    outline: none;
+}
+
+.sendButton {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff !important;
+    background: #5729ff;
+    border: none;
+    border-radius: 0 0 15px 0;
+    width: 20%;
+}
+
+.sendButton:hover {
+    background: #2300a3;
+    cursor: pointer;
+}
+
+.sendIcon {
+    color: white;
+    font-size: 1.5rem;
+}
+
+@media screen and (max-width: 1100px) {
+    .input {
+        border-radius: 0;
+    }
+
+    .sendButton {
+        border-radius: 0;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .form {
+        height: 50px;
+    }
+
+    .input {
+        font-size: 15px;
+    }
+
+    .sendIcon {
+        font-size: 1.2rem;
+    }
+}
