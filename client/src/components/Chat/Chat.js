@@ -13,7 +13,6 @@ import sendAudioURL from '../../sounds/sent.mp3'
 import receiveAudioURL from '../../sounds/received.mp3'
 import errorAudioURL from '../../sounds/error.mp3'
 
-
 import './Chat.css'
 
 let socket
@@ -34,7 +33,7 @@ const Chat = ({ location }) => {
     const [users, setUsers] = useState('')
     const [message, setMessage] = useState('')
     const [messages, setMessages] = useState([])
-    const ENDPOINT = 'localhost:5000'
+    const ENDPOINT = 'https://climate-tracker.herokuapp.com'
 
     useEffect(() => {
         const fetchEvents = async () => {
