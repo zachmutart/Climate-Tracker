@@ -48,5 +48,6 @@ io.on('connection', (socket) => {
 });
 
 app.use(router);
+app.use(express.static(path.join(__dirname, 'client/build')));
 
 server.listen(PORT, () => console.log(`Server running on port ${PORT}`));
