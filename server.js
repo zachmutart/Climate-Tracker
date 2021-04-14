@@ -12,13 +12,6 @@ const io = require('socket.io')(server, {
     },
 });
 
-// app.use(router);
-app.use(express.static(path.join(__dirname, 'client/build')));
-
-app.get('/', (req, res) => {
-    res.sendFile(path.join(__dirname, 'client/build', 'index.html'));
-});
-
 const { addUser, removeUser, getUser, getUsersInRoom } = require('./users');
 
 io.on('connection', (socket) => {
@@ -54,5 +47,8 @@ io.on('connection', (socket) => {
         }
     });
 });
+
+app.use(express.static(path.join(__dirname, 'client/build')));
+app.use(router);
 
 server.listen(PORT, () => console.log(`Server running on port ${PORT}`));
