@@ -23,7 +23,7 @@ const Map = ({ eventData, center, zoom }) => {
     // eslint-disable-next-line
     const [ locationInfo, setLocationInfo ] = useState(null)
 
-    const TOK = process.env.API_KEY
+    const TOK = 'AIzaSyClkr13c3ZAqlzA37j3U5HgudR-XbNQsEE'
 
     const markers = eventData.map(ev => {
         switch (ev.categories[0].id) {
