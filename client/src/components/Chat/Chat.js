@@ -33,6 +33,8 @@ const Chat = ({ location }) => {
     const [users, setUsers] = useState('')
     const [message, setMessage] = useState('')
     const [messages, setMessages] = useState([])
+    
+    // must change ENDPOINT to 'localhost:5000' for local development
     const ENDPOINT = 'https://climate-tracker.herokuapp.com'
 
     useEffect(() => {
