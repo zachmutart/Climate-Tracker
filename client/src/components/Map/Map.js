@@ -88,8 +88,8 @@ const Map = ({ eventData, center, zoom, loading, setLocationInfo }) => {
                     lng={ev.geometry[ev.geometry.length - 1].coordinates[0]} 
                     onClick={() => setLocationInfo({ id: ev.id, title: ev.title, link: ev.link,
                         source: ev.sources[0].url,
-                        dateTime: ev.geometry[0].date, lati: ev.geometry[0].coordinates[1],
-                        longi: ev.geometry[0].coordinates[0] })} />
+                        dateTime: ev.geometry[0].date, lati: ev.geometry[ev.geometry.length - 1].coordinates[1],
+                        longi: ev.geometry[ev.geometry.length - 1].coordinates[0] })} />
 
             case "severeStorms":
                 const stormPath = [];
