@@ -5,7 +5,7 @@
     transform: translate(-50%, -50%);
 }
   
-.location-marker:hover {
+.location-marker:hover, .location-marker:active {
     cursor: pointer;
     z-index: 1;
 }
@@ -15,28 +15,28 @@
     font-size: 2rem;
 }
 
-.drought-icon:hover {
+.drought-icon:hover, .drought-icon:active {
     filter: drop-shadow(0 0 0.3rem black);
     font-size: 2.5rem;
 }
 
 .dust-icon {
-    color: rgb(255, 166, 0);
+    color: #ffa600;
     font-size: 2.5rem;
 }
 
-.dust-icon:hover {
-    filter: drop-shadow(0 0 0.3rem rgb(255, 166, 0));
+.dust-icon:hover, .dust-icon:active {
+    filter: drop-shadow(0 0 0.3rem #ffa600);
     font-size: 3rem;
 }
 
 .quake-icon {
-    color:rgb(131, 0, 61);
+    color:#83003d;
     font-size: 2rem;
 }
 
-.quake-icon:hover {
-    filter: drop-shadow(0 0 0.3rem rgb(131, 0, 61));
+.quake-icon:hover, .quake-icon:active {
+    filter: drop-shadow(0 0 0.3rem #83003d);
     font-size: 2.5rem;
 }
 
@@ -45,7 +45,7 @@
     font-size: 1.5rem;
 }
 
-.flood-icon:hover {
+.flood-icon:hover, .flood-icon:active {
     filter: drop-shadow(0 0 0.3rem blue);
     font-size: 2rem;
 }
@@ -55,18 +55,18 @@
     font-size: 2rem;
 }
 
-.slide-icon:hover {
+.slide-icon:hover, .slide-icon:active {
     filter: drop-shadow(0 0 0.3rem black);
     font-size: 2.5rem;
 }
 
 .man-icon {
-    color: rgb(255, 35, 182);
+    color: #ff23b6;
     font-size: 2rem;
 }
 
-.man-icon:hover {
-    filter: drop-shadow(0 0 0.3rem rgb(255, 35, 182));
+.man-icon:hover, .man-icon:active {
+    filter: drop-shadow(0 0 0.3rem #ff23b6);
     font-size: 2.5rem;
 }
 
@@ -75,7 +75,7 @@
     font-size: 1.6rem;
 }
 
-.ice-icon:hover {
+.ice-icon:hover, .ice-icon:active {
     filter: drop-shadow(0 0 0.3rem rgb(107, 53, 255));
     font-size: 2.1rem;
 }
@@ -85,57 +85,58 @@
     font-size: 3rem;
 }
 
-.storm-icon:hover {
+.storm-icon:hover, .storm-icon:active {
     filter: drop-shadow(0 0 0.3rem black);
     font-size: 3.75rem;
+    transform: rotate(70deg);
 }
 
 .snow-icon {
-    color:rgb(0, 183, 255);
+    color:#00b7ff;
     font-size: 2rem;
 }
 
-.snow-icon:hover {
-    filter: drop-shadow(0 0 0.3rem rgb(0, 183, 255));
+.snow-icon:hover, .snow-icon:active {
+    filter: drop-shadow(0 0 0.3rem #00b7ff);
     font-size: 2.5rem;
 }
 
 .heat-icon {
-    color: red;
+    color: #ff0000;
     font-size: 2rem;
 }
 
-.heat-icon:hover {
-    filter: drop-shadow(0 0 0.3rem red);
+.heat-icon:hover, .heat-icon:active {
+    filter: drop-shadow(0 0 0.3rem #ff0000);
     font-size: 2.5rem;
 }
 
 .volcano-icon {
-    color: rgb(134, 85, 85);
+    color: #865555;
     font-size: 1.5rem;
 }
 
-.volcano-icon:hover {
-    filter: drop-shadow(0 0 0.3rem rgb(189, 189, 189));
+.volcano-icon:hover, .volcano-icon:active {
+    filter: drop-shadow(0 0 0.3rem #bdbdbd);
     font-size: 2rem;
 }
 
 .water-icon {
-    color:blue;
+    color: #0000ff;
     font-size: 2rem;
 }
 
-.water-icon:hover {
-    filter: drop-shadow(0 0 0.3rem blue);
+.water-icon:hover, .water-icon:active {
+    filter: drop-shadow(0 0 0.3rem #0000ff);
     font-size: 2.5rem;
 }
 
 .fire-icon {
-    color: rgba(255, 72, 0, 0.719);
+    color: #ff4800b7;
     font-size: 2.5rem;
 }
 
-.fire-icon:hover {
-    filter: drop-shadow(0 0 0.3rem rgb(255, 72, 0));
+.fire-icon:hover, .fire-icon:active {
+    filter: drop-shadow(0 0 0.3rem #ff4800);
     font-size: 3rem;
 }

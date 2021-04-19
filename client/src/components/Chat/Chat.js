@@ -7,7 +7,8 @@ import Input from '../Input/Input'
 import Messages from '../Messages/Messages'
 import UserContainer from '../UserContainer/UserContainer'
 import Map from '../Map/Map'
-import Loader from '../Loader/Loader'
+import EventList from '../EventList/EventList'
+import EventInfo from '../EventInfo/EventInfo'
 
 import sendAudioURL from '../../sounds/sent.mp3'
 import receiveAudioURL from '../../sounds/received.mp3'
@@ -28,13 +29,15 @@ errorAudio.volume = 0.5
 const Chat = ({ location }) => {
     const [eventData, setEventData] = useState([])
     const [loading, setLoading] = useState(false)
+    const [locationInfo, setLocationInfo] = useState(null)
+    // const [click, setClick] = useState(false)
     const [name, setName] = useState('')
     const [room, setRoom] = useState('')
     const [users, setUsers] = useState('')
     const [message, setMessage] = useState('')
     const [messages, setMessages] = useState([])
     
-    // must change ENDPOINT to 'localhost:5000' for local development
+    // server endpoint
     const ENDPOINT = 'https://climate-tracker.herokuapp.com'
 
     useEffect(() => {
@@ -118,7 +121,7 @@ const Chat = ({ location }) => {
     return (
         <div className="outerChatContainer">
             <div className="innerLeftContainer">
-                {!loading ? <Map eventData={ eventData } /> : <Loader /> }
+                <Map eventData={ eventData } loading={ loading } setLocationInfo={ setLocationInfo } />
             </div>
             <div className="innerRightContainer">
                 <div className="chatWrapper">
@@ -130,7 +133,10 @@ const Chat = ({ location }) => {
                     </div>
                 </div>
                 <div className="infoBoxWrapper">
-                    <p>PLACEHOLDER FOR EVENT INFORMATION LIST AND MAP LEGEND</p>
+                    { locationInfo 
+                    ? <EventInfo info={ locationInfo } onClick={() => setLocationInfo(null)} /> 
+                    : <EventList eventData={ eventData } loading={ loading } setLocationInfo={ setLocationInfo }/>
+                    }
                 </div>
             </div>
         </div>

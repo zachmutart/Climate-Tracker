@@ -2,11 +2,10 @@ import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 
 import Map from '../Map/Map'
-import Loader from '../Loader/Loader'
 
 import './Join.css'
 
-const Join = () => {
+const Join = ( ) => {
     const [name, setName] = useState('')
     const [room, setRoom] = useState('')
     const [eventData, setEventData] = useState([])
@@ -34,7 +33,9 @@ const Join = () => {
                         <input 
                             placeholder="Username" 
                             className="joinInput mt-20"
-                            type="text" onChange={ (event) => setName(event.target.value) } />
+                            type="text"
+                            // value={ username ? username : null }
+                            onChange={ (event) => setName(event.target.value) } />
                     </div>
                     <div>
                         <select defaultValue={'DEFAULT'}
@@ -62,8 +63,7 @@ const Join = () => {
                 </div>
             </div>
             <div className="innerBottomContainer">
-                {!loading ? <Map eventData={ eventData } /> : <Loader /> }
-                {/* <Map eventData={eventData} /> */}
+                <Map eventData={ eventData } loading={ loading } />
             </div>
         </div>
     )

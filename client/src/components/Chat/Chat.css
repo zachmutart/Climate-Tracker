@@ -14,8 +14,20 @@
 }
 
 .map {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     height: 100%;
     width: 100%;
+}
+
+.load {
+    justify-self: center;
+    position: absolute;
+    z-index: 1000;
+    width: 55px;
+    height: auto;
+    transform: translate(-50%, -50%);
 }
 
 .map > div {
@@ -30,6 +42,7 @@
     height: 100%;
     width: 50%;
     margin-left: 0.5%;
+    margin-bottom: 1%;
 }
 
 .chatWrapper {
@@ -39,7 +52,7 @@
     width: 100%;
     height: 50%;
     border-radius: 20px;
-    margin-bottom: 1%;
+    margin-bottom: 0.5%;
 }
 
 .innerChatContainer {
@@ -57,16 +70,25 @@
     justify-content: center;
     width: 100%;
     height: 50%;
-    margin-top: 1%;
-    background-color: grey;
-    padding: 20px;
-    border: 4px solid white;
+    margin-top: 0.5%;
     border-radius: 20px;
+    padding: 0;
+    background-color: white;
+    border-top: 20px solid #5729ff;
+    border-bottom: 20px solid #5729ff;
 }
 
-.infoBoxWrapper > p {
-    font-size: 3rem;
-    color: white;
+.infoBoxWrapper > div {
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+.infoBoxWrapper > img {
+    display: flex;
+    justify-self: center;
+    position: relative;
 }
 
 @media screen and (max-width: 1100px) {
@@ -79,11 +101,11 @@
         width: 100%;
     }
 
-    .infoBoxWrapper {
-        padding: 2.5px 0 0 5px;
+    .map > div {
+        border-radius: 0;
     }
 
-    .map > div {
+    .infoBoxWrapper {
         border-radius: 0;
     }
 }

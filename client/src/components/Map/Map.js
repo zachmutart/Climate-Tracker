@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 import GoogleMapReact from 'google-map-react'
 import FireMarker from './FireMarker'
 import SnowMarker from './SnowMarker'
@@ -13,18 +13,12 @@ import EarthquakeMarker from './EarthquakeMarker'
 import LandslideMarker from './LandslideMarker'
 import ManmadeMarker from './ManmadeMarker'
 import WaterMarker from './WaterMarker'
+import spinner from '../../img/spinner.gif'
 import './Markers.css'
     
-const Map = ({ eventData, center, zoom }) => {
-
-    // the comment below disables the React warning for an assigned but unused variable
-    // temporarily while under development
-
-    // eslint-disable-next-line
-    const [ locationInfo, setLocationInfo ] = useState(null)
+const Map = ({ eventData, center, zoom, loading, setLocationInfo }) => {
 
     const TOK = 'AIzaSyClkr13c3ZAqlzA37j3U5HgudR-XbNQsEE'
-
     const markers = eventData.map(ev => {
         switch (ev.categories[0].id) {
             case "drought":
@@ -32,7 +26,8 @@ const Map = ({ eventData, center, zoom }) => {
                     key={ev.id}
                     lat={ev.geometry[0].coordinates[1]} 
                     lng={ev.geometry[0].coordinates[0]} 
-                    onClick={() => setLocationInfo({ id: ev.id, title: ev.title,
+                    onClick={() => setLocationInfo({ id: ev.id, title: ev.title, link: ev.link,
+                        source: ev.sources[0].url,
                         dateTime: ev.geometry[0].date, lati: ev.geometry[0].coordinates[1],
                         longi: ev.geometry[0].coordinates[0] })} />
 
@@ -41,7 +36,8 @@ const Map = ({ eventData, center, zoom }) => {
                     key={ev.id}
                     lat={ev.geometry[0].coordinates[1]} 
                     lng={ev.geometry[0].coordinates[0]} 
-                    onClick={() => setLocationInfo({ id: ev.id, title: ev.title,
+                    onClick={() => setLocationInfo({ id: ev.id, title: ev.title, link: ev.link,
+                        source: ev.sources[0].url,
                         dateTime: ev.geometry[0].date, lati: ev.geometry[0].coordinates[1],
                         longi: ev.geometry[0].coordinates[0] })} />
 
@@ -50,7 +46,8 @@ const Map = ({ eventData, center, zoom }) => {
                     key={ev.id}
                     lat={ev.geometry[0].coordinates[1]} 
                     lng={ev.geometry[0].coordinates[0]} 
-                    onClick={() => setLocationInfo({ id: ev.id, title: ev.title,
+                    onClick={() => setLocationInfo({ id: ev.id, title: ev.title, link: ev.link,
+                        source: ev.sources[0].url,
                         dateTime: ev.geometry[0].date, lati: ev.geometry[0].coordinates[1],
                         longi: ev.geometry[0].coordinates[0] })} />
 
@@ -59,7 +56,8 @@ const Map = ({ eventData, center, zoom }) => {
                         key={ev.id}
                         lat={ev.geometry[0].coordinates[1]} 
                         lng={ev.geometry[0].coordinates[0]} 
-                        onClick={() => setLocationInfo({ id: ev.id, title: ev.title,
+                        onClick={() => setLocationInfo({ id: ev.id, title: ev.title, link: ev.link,
+                            source: ev.sources[0].url,
                             dateTime: ev.geometry[0].date, lati: ev.geometry[0].coordinates[1],
                             longi: ev.geometry[0].coordinates[0] })} />
 
@@ -68,7 +66,8 @@ const Map = ({ eventData, center, zoom }) => {
                     key={ev.id}
                     lat={ev.geometry[0].coordinates[1]} 
                     lng={ev.geometry[0].coordinates[0]} 
-                    onClick={() => setLocationInfo({ id: ev.id, title: ev.title,
+                    onClick={() => setLocationInfo({ id: ev.id, title: ev.title, link: ev.link,
+                        source: ev.sources[0].url,
                         dateTime: ev.geometry[0].date, lati: ev.geometry[0].coordinates[1],
                         longi: ev.geometry[0].coordinates[0] })} />
 
@@ -77,16 +76,18 @@ const Map = ({ eventData, center, zoom }) => {
                     key={ev.id}
                     lat={ev.geometry[0].coordinates[1]} 
                     lng={ev.geometry[0].coordinates[0]} 
-                    onClick={() => setLocationInfo({ id: ev.id, title: ev.title,
+                    onClick={() => setLocationInfo({ id: ev.id, title: ev.title, link: ev.link,
+                        source: ev.sources[0].url,
                         dateTime: ev.geometry[0].date, lati: ev.geometry[0].coordinates[1],
                         longi: ev.geometry[0].coordinates[0] })} />
 
             case "seaLakeIce":
                 return <IceMarker
                     key={ev.id}
-                    lat={ev.geometry[0].coordinates[1]} 
-                    lng={ev.geometry[0].coordinates[0]} 
-                    onClick={() => setLocationInfo({ id: ev.id, title: ev.title,
+                    lat={ev.geometry[ev.geometry.length - 1].coordinates[1]} 
+                    lng={ev.geometry[ev.geometry.length - 1].coordinates[0]} 
+                    onClick={() => setLocationInfo({ id: ev.id, title: ev.title, link: ev.link,
+                        source: ev.sources[0].url,
                         dateTime: ev.geometry[0].date, lati: ev.geometry[0].coordinates[1],
                         longi: ev.geometry[0].coordinates[0] })} />
 
@@ -98,7 +99,8 @@ const Map = ({ eventData, center, zoom }) => {
                             key={ev.id + i}
                             lat={ev.geometry[i].coordinates[1]} 
                             lng={ev.geometry[i].coordinates[0]} 
-                            onClick={() => setLocationInfo({ id: ev.id, title: ev.title,
+                            onClick={() => setLocationInfo({ id: ev.id, title: ev.title, link: ev.link,
+                                source: ev.sources[0].url,
                                 dateTime: ev.geometry[i].date, lati: ev.geometry[i].coordinates[1],
                                 longi: ev.geometry[i].coordinates[0] })} /> 
                     )
@@ -110,7 +112,8 @@ const Map = ({ eventData, center, zoom }) => {
                     key={ev.id}
                     lat={ev.geometry[0].coordinates[1]} 
                     lng={ev.geometry[0].coordinates[0]} 
-                    onClick={() => setLocationInfo({ id: ev.id, title: ev.title,
+                    onClick={() => setLocationInfo({ id: ev.id, title: ev.title, link: ev.link,
+                        source: ev.sources[0].url,
                         dateTime: ev.geometry[0].date, lati: ev.geometry[0].coordinates[1],
                         longi: ev.geometry[0].coordinates[0] })} />
 
@@ -119,7 +122,8 @@ const Map = ({ eventData, center, zoom }) => {
                     key={ev.id}
                     lat={ev.geometry[0].coordinates[1]} 
                     lng={ev.geometry[0].coordinates[0]} 
-                    onClick={() => setLocationInfo({ id: ev.id, title: ev.title,
+                    onClick={() => setLocationInfo({ id: ev.id, title: ev.title, link: ev.link,
+                        source: ev.sources[0].url,
                         dateTime: ev.geometry[0].date, lati: ev.geometry[0].coordinates[1],
                         longi: ev.geometry[0].coordinates[0] })} />
 
@@ -128,8 +132,9 @@ const Map = ({ eventData, center, zoom }) => {
                     return <VolcanoMarker
                         key={ev.id}
                         lat={ev.geometry[0].coordinates[1]} 
-                        lng={ev.geometry[0].coordinates[0]} 
-                        onClick={() => setLocationInfo({ id: ev.id, title: ev.title,
+                        lng={ev.geometry[0].coordinates[0]}
+                        onClick={() => setLocationInfo({ id: ev.id, title: ev.title, link: ev.link,
+                            source: ev.sources[0].url,
                             dateTime: ev.geometry[0].date, lati: ev.geometry[0].coordinates[1],
                             longi: ev.geometry[0].coordinates[0] })} />
                 }
@@ -143,7 +148,8 @@ const Map = ({ eventData, center, zoom }) => {
                     key={ev.id}
                     lat={ev.geometry[0].coordinates[1]} 
                     lng={ev.geometry[0].coordinates[0]} 
-                    onClick={() => setLocationInfo({ id: ev.id, title: ev.title,
+                    onClick={() => setLocationInfo({ id: ev.id, title: ev.title, link: ev.link,
+                        source: ev.sources[0].url,
                         dateTime: ev.geometry[0].date, lati: ev.geometry[0].coordinates[1],
                         longi: ev.geometry[0].coordinates[0] })} />
 
@@ -152,9 +158,10 @@ const Map = ({ eventData, center, zoom }) => {
                     key={ev.id}
                     lat={ev.geometry[0].coordinates[1]} 
                     lng={ev.geometry[0].coordinates[0]} 
-                    onClick={() => setLocationInfo({ id: ev.id, title: ev.title,
-                     dateTime: ev.geometry[0].date, lati: ev.geometry[0].coordinates[1],
-                     longi: ev.geometry[0].coordinates[0] })} />
+                    onClick={() => setLocationInfo({ id: ev.id, title: ev.title, link: ev.link,
+                        source: ev.sources[0].url,
+                        dateTime: ev.geometry[0].date, lati: ev.geometry[0].coordinates[1],
+                        longi: ev.geometry[0].coordinates[0] })} />
 
             default:
                 return null
@@ -164,6 +171,9 @@ const Map = ({ eventData, center, zoom }) => {
     // return the GoogleMapReact component with default properties defined below
     return (
         <div className="map">
+
+            { loading ? <img className="load" src={ spinner } alt="Loading" /> : null }
+
             <GoogleMapReact
                 bootstrapURLKeys={{ key: TOK }}
                 center={ center }
@@ -172,7 +182,7 @@ const Map = ({ eventData, center, zoom }) => {
                     streetViewControl: false,
                     draggable: true,
                     zoomControlOptions: { 
-                        position: 7 
+                        position: 3 
                     },
                     keyboardShortcuts: true,
                     scaleControl: true,
@@ -184,19 +194,19 @@ const Map = ({ eventData, center, zoom }) => {
                 }}
             >
 
-                { markers }
+                { loading ? null : markers}
 
             </GoogleMapReact>
 
         </div>
-    );
+    )
 
 }
 
 Map.defaultProps = {
     center: {
-        lat: 38.5,
-        lng: -95.5  // these values center on North America to start
+        lat: 31,
+        lng: -98  // these values center on North America to start
     },
     zoom: 1
 }

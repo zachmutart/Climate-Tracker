@@ -1,0 +1,29 @@
+.eventListContainer {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-direction: column;
+    height:100%;
+    width: 100%;
+    overflow-y: auto;
+}
+
+.loading {
+    position: absolute;
+    justify-self: center;
+}
+
+.eventContainer {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    width: 100%;
+    border-bottom: 1px solid #5729ff;
+}
+
+.eventContainer:hover {
+    background-color: #b4b4b4;
+    box-shadow: 0 2px 8px black;
+    border-bottom: 1px solid black;
+    cursor: pointer;
+}

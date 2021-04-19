@@ -37,7 +37,7 @@ function Navbar() {
                         </li>
                         <li className='nav-item'>
                             <Link
-                                to='/'
+                                to="/"
                                 className='nav-links'
                                 onClick={() => setClick(false)}
                             >

@@ -1,0 +1,85 @@
+.eventWrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    padding: 5px 2px;
+    width: 100%;
+    height: auto;
+}
+
+.eventLeftContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 0.15;
+    justify-self: flex-start;
+}
+
+.eventRightContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    word-wrap: break-word;
+    flex: 0.85;
+    justify-self: flex-end;
+    overflow: hidden;
+    padding: 10px 0;
+}
+
+.list-icon {
+    color: black;
+    font-size: 2.75rem;
+}
+
+.dr-icon {
+    color: black;
+}
+
+.du-icon {
+    color: #ffa600;
+}
+
+.q-icon {
+    color: #83003d;
+}
+
+.fl-icon {
+    color: rgba(0, 0, 255, 0.89);
+}
+
+.ls-icon {
+    color: black;
+}
+
+.m-icon {
+    color: #ff23b6;
+}
+
+.sli-icon {
+    color: rgba(107, 53, 255, 0.76);
+}
+
+.st-icon {
+    color: rgba(124, 124, 124, 0.75);    
+}
+
+.sn-icon {
+    color: #00b7ff;
+}
+
+.ht-icon {
+    color: #ff0000;
+}
+
+.vc-icon {
+    color: #814b4b;
+}
+
+.wt-icon {
+    color: #0000ff;
+}
+
+.fr-icon {
+    color: #ff5715;
+}

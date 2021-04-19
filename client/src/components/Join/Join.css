@@ -31,6 +31,14 @@
     height: calc(50vh - 40px);
 }
 
+.load {
+    position: absolute;
+    z-index: 1000;
+    width: 55px;
+    height: auto;
+    transform: translate(-50%, -50%);
+}
+
 .joinInput {
     font-size: 1.1rem;
     border-radius: 5px;
@@ -42,7 +50,7 @@
     color: white;
     font-size: 2.75rem;
     font-weight: lighter;
-    letter-spacing: 3px;
+    letter-spacing: 2px;
     padding-bottom: 10px;
     /* padding-bottom: 20px; */
     /* border-bottom: 5px solid white; */
@@ -136,6 +144,7 @@
 
     .heading {
         font-size: 1.4rem;
+        letter-spacing: 0.5px;
         padding-bottom: 10px;
     }
 
