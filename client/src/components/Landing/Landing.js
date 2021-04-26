@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import video from '../../video/earth.mp4'
+import video from '../../video/earth_bg.mp4'
 import './Landing.css'
 
 const phrases = ["Earth", "our planet", "our home", "our children's future", "our chance to do what is right."]
