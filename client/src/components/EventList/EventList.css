@@ -10,7 +10,7 @@
 
 .loading {
     position: absolute;
-    justify-self: center;
+    top: 72.5%;
 }
 
 .eventContainer {

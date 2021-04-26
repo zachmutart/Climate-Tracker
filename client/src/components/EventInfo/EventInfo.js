@@ -1,14 +1,25 @@
 import React from 'react'
-
+import * as AiIcons from 'react-icons/ai'
 import './EventInfo.css'
 
+
+/**
+ * EventInfo component -
+ * 
+ * An information display component with pertinent event-specific information
+ * as well as buttons to external links for additional information, sources,
+ * etc
+ * 
+ */
 const EventInfo = ({ info, onClick }) => {
+    
+    // create search link URL
+    const searchLink = `https://www.google.com/search?q=${info.title.replace(" ", "%20")}`
 
-    const title = info.title
-    const searchLink = `https://www.google.com/search?q=${title.replace(" ", "%20")}`
-
+    // Return JSX for the event information component
     return (
         <div className="eventInfoWrapper">
+            <div className="closeBtn" onClick={ onClick }><AiIcons.AiOutlineClose /></div>
             <div className="eventInfoInnerContainer">
                 <h2>{ info.title }</h2>
                 <ul className="information">
@@ -25,9 +36,9 @@ const EventInfo = ({ info, onClick }) => {
                     <a href={ info.source } target={"_blank"} rel="noopener noreferrer">Source Link</a>
                 </ul>
             </div>
-            <div className="closeBtn" onClick={ onClick }><p>Return to List</p></div>
         </div>
     )
 }
 
+// Export the EventInfo component
 export default EventInfo

@@ -6,6 +6,14 @@ import * as AiIcons from 'react-icons/ai'
 import { ReactComponent as Logo } from '../../img/logo.svg'
 import './NavBar.css'
 
+
+/**
+ * NavBar component -
+ * 
+ * The navigation bar component with standard collapsed menu with icon
+ * for smaller display devices
+ * 
+ */
 function Navbar() {
     const [click, setClick] = useState(false)
 
@@ -37,7 +45,7 @@ function Navbar() {
                         </li>
                         <li className='nav-item'>
                             <Link
-                                to="/"
+                                to="/join"
                                 className='nav-links'
                                 onClick={() => setClick(false)}
                             >
@@ -51,24 +59,6 @@ function Navbar() {
                                 onClick={() => setClick(false)}
                             >
                                 Conservation
-                            </Link>
-                        </li>
-                        <li className='nav-item'>
-                            <Link
-                                to='/login'
-                                className='nav-links nav-login'
-                                onClick={() => setClick(false)}
-                            >
-                                Sign In
-                            </Link>
-                        </li>
-                        <li className='nav-item'>
-                            <Link
-                                to='/join'
-                                className='nav-links nav-create'
-                                onClick={() => setClick(false)}
-                            >
-                                Create Account
                             </Link>
                         </li>
                     </ul>

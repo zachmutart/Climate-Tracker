@@ -1,16 +1,22 @@
 import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
-
 import Map from '../Map/Map'
-
 import './Join.css'
 
+/**
+ * Join component -
+ * 
+ * The main interface for the chatroom join page. Allows user to select a
+ * username and chatroom and navigates to that url
+ *  
+ */
 const Join = ( ) => {
     const [name, setName] = useState('')
     const [room, setRoom] = useState('')
     const [eventData, setEventData] = useState([])
     const [loading, setLoading] = useState(false)
 
+    // API call for climate/climate event data
     useEffect(() => {
         const fetchEvents = async () => {
             setLoading(true)
@@ -23,6 +29,7 @@ const Join = ( ) => {
         fetchEvents()
     }, [])
 
+    // Return JSX for the Join component
     return (
         <div className="joinOuterContainer">
             <div className="innerTopContainer">
@@ -34,7 +41,6 @@ const Join = ( ) => {
                             placeholder="Username" 
                             className="joinInput mt-20"
                             type="text"
-                            // value={ username ? username : null }
                             onChange={ (event) => setName(event.target.value) } />
                     </div>
                     <div>
@@ -69,4 +75,5 @@ const Join = ( ) => {
     )
 }
 
+// Export the Join component
 export default Join

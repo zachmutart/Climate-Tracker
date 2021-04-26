@@ -13,7 +13,7 @@
     display: flex;
     justify-self: start;
     margin-left: 32px;
-    margin-right: 9%;
+    margin-right: 25%;
     cursor: pointer;
     text-align: center;
     text-decoration: none;
@@ -27,7 +27,7 @@
 
 .nav-menu {
     height: 80px;
-    margin-right: 32px;
+    margin-right: 10px;
     display: flex;
     align-items: center;
     justify-content:flex-end;
@@ -84,7 +84,7 @@
     display: none;
 }
 
-@media screen and (max-width: 1465px) {
+@media screen and (max-width: 1300px) {
 
     .nav-menu {
         display: flex;
@@ -92,12 +92,14 @@
         align-items: center;
         justify-content: flex-start;
         text-align: center;
+        font-size: 1.8rem;
         width: 100%;
         height: calc(100vh - 60px);
         position: absolute;
         top: 60px;
         left: -100%;
         opacity: 0;
+        z-index: 1;
         transition: all 0.5s ease;
     }
 
@@ -159,5 +161,12 @@
     
     .navbar-logo p {
         font-size: 24px;
+    }
+}
+
+@media screen and (max-width: 360px) {
+    
+    .navbar-logo p {
+        font-size: 20px;
     }
 }

@@ -1,11 +1,10 @@
 .eventInfoWrapper {
     display: flex;
     align-items: center;
-    justify-content: center;
     flex-direction: column;
     width: 100%;
     height: 100%;
-    padding: 20px 50px;
+    padding: 10px 50px;
     overflow-y: auto;
 }
 
@@ -14,24 +13,24 @@
     justify-content: flex-start;
     flex-direction: column;
     height: 100%;
-    padding-top: 20px;
+    padding-top: max(75px, 8%);
 }
 
 .eventInfoInnerContainer > h2 {
-    font-size: 3rem;
-    margin-bottom: 20px;
+    font-size: 2.8rem;
+    margin-bottom: 10px;
     color: #5729ff;
 }
 
 .information {
     list-style: none;
-    line-height: 3rem;
-    font-size: 2rem;
+    line-height: 2.8rem;
+    font-size: 1.8rem;
 }
 
 .externalLink {
-    margin: 60px 0;
-    font-size: 1.8rem;
+    margin: 40px 0;
+    font-size: 1.5rem;
 }
 
 .eonetInfo {
@@ -50,13 +49,19 @@
     text-align: center;
     text-decoration: none;
     border-radius: 60px;
-    transition: all 0.3s ease;
+    transition: all 0.1s ease;
+    box-shadow: 1px 2px 3px black;
 }
 
-.externalLink > a:hover, .externalLink > a:active {
+.externalLink > a:hover {
     background-color: #5729ff;
     color: white;
     box-shadow: 1px 3px 8px black;
+}
+
+.externalLink > a:active {
+    background-color: #3214a0;
+    border: 3px solid #3214a0;
 }
 
 .eonetInfo > a:link, .eonetInfo > a:visited {
@@ -69,54 +74,75 @@
     text-align: center;
     text-decoration: none;
     border-radius: 60px;
-    transition: all 0.2s ease;
+    transition: all 0.1s ease;
+    box-shadow: 1px 2px 3px black;
 }
 
-.eonetInfo > a:hover, .eonetInfo > a:active {
+.eonetInfo > a:hover {
     background-color: #5729ff;
     color: white;
     box-shadow: 1px 3px 8px black;
 }
 
+.eonetInfo > a:active {
+    background-color: #3214a0;
+    border: 3px solid #3214a0;
+}
+
 .closeBtn {
+    position: fixed;
     display: flex;
     align-items: center;
-    justify-content: flex-end;
     flex-direction: row;
-    font-size: 1.3rem;
-    
-    background-color: #5729ff;
-    border: 3px solid #5729ff;
+    font-size: 2rem;
+    background-color: #ff292991;
     color: white;
-    padding: 10px 24px;
+    padding: 10px 10px;
+    margin-top: 0.5%;
     border-radius: 60px;
-    transition: all 0.2s ease;
+    box-shadow: 1px 2px 5px black;
 }
 
 .closeBtn:hover {
     cursor: pointer;
-    background-color: transparent;
-    color: #5729ff;
-    font-weight: bold;
+    background-color: #ff2929;
     box-shadow: 1px 3px 8px black;
 }
 
-@media screen and (max-width: 1200px) {
+.closeBtn:active {
+    background-color: #a51515;
+}
+
+@media screen and (max-width: 1300px) {
+    .eventInfoInnerContainer {
+        padding-top: 60px;
+    }
+
     .eventInfoInnerContainer > h2 {
         font-size: 2.25rem;
     }
 
     .information {
-        font-size: 1.6rem;
-        line-height: 2rem;
+        font-size: 1.5rem;
+        line-height: 1.8rem;
     }
 
     .externalLink {
         margin: 30px 0;
-        font-size: 1.6rem;
+        font-size: 1.3rem;
     }
 
     .eonetInfo {
         font-size: 1.1rem;
+    }
+
+    .closeBtn {
+        font-size: 1.5rem;
+    }
+}
+
+@media screen and (max-width: 1100px) {
+    .eventInfoWrapper {
+        padding: 10px 20px;
     }
 }

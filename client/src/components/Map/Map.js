@@ -15,10 +15,18 @@ import ManmadeMarker from './ManmadeMarker'
 import WaterMarker from './WaterMarker'
 import spinner from '../../img/spinner.gif'
 import './Markers.css'
-    
+
+/**
+ * Map component -
+ * 
+ * Takes in parameters from the parent component, processes that data
+ * to create custom map markers, and creates the Map using Google Maps
+ * API on which the custom map markers are overlayed.
+ * 
+ */
 const Map = ({ eventData, center, zoom, loading, setLocationInfo }) => {
 
-    const TOK = 'AIzaSyClkr13c3ZAqlzA37j3U5HgudR-XbNQsEE'
+    // Each event in eventData is mapped to a custom map marker based on the id
     const markers = eventData.map(ev => {
         switch (ev.categories[0].id) {
             case "drought":
@@ -26,72 +34,88 @@ const Map = ({ eventData, center, zoom, loading, setLocationInfo }) => {
                     key={ev.id}
                     lat={ev.geometry[0].coordinates[1]} 
                     lng={ev.geometry[0].coordinates[0]} 
-                    onClick={() => setLocationInfo({ id: ev.id, title: ev.title, link: ev.link,
+                    onClick={setLocationInfo ? () => setLocationInfo({ id: ev.id, 
+                        title: ev.title, 
+                        link: ev.link,
                         source: ev.sources[0].url,
                         dateTime: ev.geometry[0].date, lati: ev.geometry[0].coordinates[1],
-                        longi: ev.geometry[0].coordinates[0] })} />
+                        longi: ev.geometry[0].coordinates[0] }) : null} />
 
             case "dustHaze":
                 return <DustMarker
                     key={ev.id}
                     lat={ev.geometry[0].coordinates[1]} 
                     lng={ev.geometry[0].coordinates[0]} 
-                    onClick={() => setLocationInfo({ id: ev.id, title: ev.title, link: ev.link,
+                    onClick={setLocationInfo ? () => setLocationInfo({ id: ev.id, 
+                        title: ev.title, 
+                        link: ev.link,
                         source: ev.sources[0].url,
                         dateTime: ev.geometry[0].date, lati: ev.geometry[0].coordinates[1],
-                        longi: ev.geometry[0].coordinates[0] })} />
+                        longi: ev.geometry[0].coordinates[0] }) : null} />
 
             case "earthquakes":
                 return <EarthquakeMarker
                     key={ev.id}
                     lat={ev.geometry[0].coordinates[1]} 
                     lng={ev.geometry[0].coordinates[0]} 
-                    onClick={() => setLocationInfo({ id: ev.id, title: ev.title, link: ev.link,
+                    onClick={setLocationInfo ? () => setLocationInfo({ id: ev.id, 
+                        title: ev.title, 
+                        link: ev.link,
                         source: ev.sources[0].url,
                         dateTime: ev.geometry[0].date, lati: ev.geometry[0].coordinates[1],
-                        longi: ev.geometry[0].coordinates[0] })} />
+                        longi: ev.geometry[0].coordinates[0] }) : null} />
 
             case "floods":
                 return <FloodMarker 
                         key={ev.id}
                         lat={ev.geometry[0].coordinates[1]} 
                         lng={ev.geometry[0].coordinates[0]} 
-                        onClick={() => setLocationInfo({ id: ev.id, title: ev.title, link: ev.link,
+                        onClick={setLocationInfo ? () => setLocationInfo({ id: ev.id, 
+                            title: ev.title, 
+                            link: ev.link,
                             source: ev.sources[0].url,
                             dateTime: ev.geometry[0].date, lati: ev.geometry[0].coordinates[1],
-                            longi: ev.geometry[0].coordinates[0] })} />
+                            longi: ev.geometry[0].coordinates[0] }) : null} />
 
             case "landslides":
                 return <LandslideMarker
                     key={ev.id}
                     lat={ev.geometry[0].coordinates[1]} 
                     lng={ev.geometry[0].coordinates[0]} 
-                    onClick={() => setLocationInfo({ id: ev.id, title: ev.title, link: ev.link,
+                    onClick={setLocationInfo ? () => setLocationInfo({ id: ev.id, 
+                        title: ev.title, 
+                        link: ev.link,
                         source: ev.sources[0].url,
                         dateTime: ev.geometry[0].date, lati: ev.geometry[0].coordinates[1],
-                        longi: ev.geometry[0].coordinates[0] })} />
+                        longi: ev.geometry[0].coordinates[0] }) : null} />
 
             case "manmade":
                 return <ManmadeMarker
                     key={ev.id}
                     lat={ev.geometry[0].coordinates[1]} 
                     lng={ev.geometry[0].coordinates[0]} 
-                    onClick={() => setLocationInfo({ id: ev.id, title: ev.title, link: ev.link,
+                    onClick={setLocationInfo ? () => setLocationInfo({ id: ev.id, 
+                        title: ev.title, 
+                        link: ev.link,
                         source: ev.sources[0].url,
                         dateTime: ev.geometry[0].date, lati: ev.geometry[0].coordinates[1],
-                        longi: ev.geometry[0].coordinates[0] })} />
+                        longi: ev.geometry[0].coordinates[0] }) : null} />
 
             case "seaLakeIce":
                 return <IceMarker
                     key={ev.id}
                     lat={ev.geometry[ev.geometry.length - 1].coordinates[1]} 
                     lng={ev.geometry[ev.geometry.length - 1].coordinates[0]} 
-                    onClick={() => setLocationInfo({ id: ev.id, title: ev.title, link: ev.link,
+                    onClick={setLocationInfo ? () => setLocationInfo({ id: ev.id, 
+                        title: ev.title, 
+                        link: ev.link,
                         source: ev.sources[0].url,
                         dateTime: ev.geometry[0].date, lati: ev.geometry[ev.geometry.length - 1].coordinates[1],
-                        longi: ev.geometry[ev.geometry.length - 1].coordinates[0] })} />
+                        longi: ev.geometry[ev.geometry.length - 1].coordinates[0] }) : null} />
 
             case "severeStorms":
+                // a storm will have various points representing its path, so loop through
+                // them and create a marker for each point
                 const stormPath = [];
                 for (let i = 0; i < ev.geometry.length; i++) {
                     stormPath.push(
@@ -99,10 +123,12 @@ const Map = ({ eventData, center, zoom, loading, setLocationInfo }) => {
                             key={ev.id + i}
                             lat={ev.geometry[i].coordinates[1]} 
                             lng={ev.geometry[i].coordinates[0]} 
-                            onClick={() => setLocationInfo({ id: ev.id, title: ev.title, link: ev.link,
+                            onClick={setLocationInfo ? () => setLocationInfo({ id: ev.id, 
+                                title: ev.title, 
+                                link: ev.link,
                                 source: ev.sources[0].url,
                                 dateTime: ev.geometry[i].date, lati: ev.geometry[i].coordinates[1],
-                                longi: ev.geometry[i].coordinates[0] })} /> 
+                                longi: ev.geometry[i].coordinates[0] }) : null} /> 
                     )
                 }
                 return stormPath;
@@ -112,20 +138,24 @@ const Map = ({ eventData, center, zoom, loading, setLocationInfo }) => {
                     key={ev.id}
                     lat={ev.geometry[0].coordinates[1]} 
                     lng={ev.geometry[0].coordinates[0]} 
-                    onClick={() => setLocationInfo({ id: ev.id, title: ev.title, link: ev.link,
+                    onClick={setLocationInfo ? () => setLocationInfo({ id: ev.id, 
+                        title: ev.title, 
+                        link: ev.link,
                         source: ev.sources[0].url,
                         dateTime: ev.geometry[0].date, lati: ev.geometry[0].coordinates[1],
-                        longi: ev.geometry[0].coordinates[0] })} />
+                        longi: ev.geometry[0].coordinates[0] }) : null} />
 
             case "tempExtremes":
                 return <HeatMarker
                     key={ev.id}
                     lat={ev.geometry[0].coordinates[1]} 
                     lng={ev.geometry[0].coordinates[0]} 
-                    onClick={() => setLocationInfo({ id: ev.id, title: ev.title, link: ev.link,
+                    onClick={setLocationInfo ? () => setLocationInfo({ id: ev.id, 
+                        title: ev.title, 
+                        link: ev.link,
                         source: ev.sources[0].url,
                         dateTime: ev.geometry[0].date, lati: ev.geometry[0].coordinates[1],
-                        longi: ev.geometry[0].coordinates[0] })} />
+                        longi: ev.geometry[0].coordinates[0] }) : null} />
 
             case "volcanoes":
                 if (ev.geometry[0].type !== "Polygon") {
@@ -133,13 +163,15 @@ const Map = ({ eventData, center, zoom, loading, setLocationInfo }) => {
                         key={ev.id}
                         lat={ev.geometry[0].coordinates[1]} 
                         lng={ev.geometry[0].coordinates[0]}
-                        onClick={() => setLocationInfo({ id: ev.id, title: ev.title, link: ev.link,
+                        onClick={setLocationInfo ? () => setLocationInfo({ id: ev.id, 
+                            title: ev.title, 
+                            link: ev.link,
                             source: ev.sources[0].url,
                             dateTime: ev.geometry[0].date, lati: ev.geometry[0].coordinates[1],
-                            longi: ev.geometry[0].coordinates[0] })} />
+                            longi: ev.geometry[0].coordinates[0] }) : null} />
                 }
                 else {
-                    // dealing with a polygon type data -- need to investigate how to parse and represent
+                    // polygon geometry, need to figure out a way to parse
                     return null;
                 }
 
@@ -148,25 +180,30 @@ const Map = ({ eventData, center, zoom, loading, setLocationInfo }) => {
                     key={ev.id}
                     lat={ev.geometry[0].coordinates[1]} 
                     lng={ev.geometry[0].coordinates[0]} 
-                    onClick={() => setLocationInfo({ id: ev.id, title: ev.title, link: ev.link,
+                    onClick={setLocationInfo ? () => setLocationInfo({ id: ev.id, 
+                        title: ev.title, 
+                        link: ev.link,
                         source: ev.sources[0].url,
                         dateTime: ev.geometry[0].date, lati: ev.geometry[0].coordinates[1],
-                        longi: ev.geometry[0].coordinates[0] })} />
+                        longi: ev.geometry[0].coordinates[0] }) : null} />
 
             case "wildfires":
                 return <FireMarker
                     key={ev.id}
                     lat={ev.geometry[0].coordinates[1]} 
                     lng={ev.geometry[0].coordinates[0]} 
-                    onClick={() => setLocationInfo({ id: ev.id, title: ev.title, link: ev.link,
+                    onClick={setLocationInfo ? () => setLocationInfo({ id: ev.id, 
+                        title: ev.title, 
+                        link: ev.link,
                         source: ev.sources[0].url,
                         dateTime: ev.geometry[0].date, lati: ev.geometry[0].coordinates[1],
-                        longi: ev.geometry[0].coordinates[0] })} />
+                        longi: ev.geometry[0].coordinates[0] }) : null} />
 
             default:
                 return null
         }
     })
+    const TOK = 'AIzaSyClkr13c3ZAqlzA37j3U5HgudR-XbNQsEE'
 
     // return the GoogleMapReact component with default properties defined below
     return (
@@ -192,6 +229,7 @@ const Map = ({ eventData, center, zoom, loading, setLocationInfo }) => {
                         latLngBounds: { north: 85, south: -85, west: -180, east: 180 },
                     },
                 }}
+                onClick={ () => setLocationInfo(null) }
             >
 
                 { loading ? null : markers}
@@ -200,9 +238,9 @@ const Map = ({ eventData, center, zoom, loading, setLocationInfo }) => {
 
         </div>
     )
-
 }
 
+// default properties for the Map component
 Map.defaultProps = {
     center: {
         lat: 31,
@@ -211,4 +249,5 @@ Map.defaultProps = {
     zoom: 1
 }
 
+// export the Map component
 export default Map
