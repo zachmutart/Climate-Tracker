@@ -34,11 +34,14 @@ const Map = ({ eventData, center, zoom, loading, setLocationInfo }) => {
                     key={ev.id}
                     lat={ev.geometry[0].coordinates[1]} 
                     lng={ev.geometry[0].coordinates[0]} 
-                    onClick={setLocationInfo ? () => setLocationInfo({ id: ev.id, 
+                    onClick={setLocationInfo ? () => setLocationInfo({ 
+                        type: ev.categories[0].id,
+                        id: ev.id, 
                         title: ev.title, 
                         link: ev.link,
                         source: ev.sources[0].url,
-                        dateTime: ev.geometry[0].date, lati: ev.geometry[0].coordinates[1],
+                        dateTime: ev.geometry[0].date,
+                        lati: ev.geometry[0].coordinates[1],
                         longi: ev.geometry[0].coordinates[0] }) : null} />
 
             case "dustHaze":
@@ -46,7 +49,9 @@ const Map = ({ eventData, center, zoom, loading, setLocationInfo }) => {
                     key={ev.id}
                     lat={ev.geometry[0].coordinates[1]} 
                     lng={ev.geometry[0].coordinates[0]} 
-                    onClick={setLocationInfo ? () => setLocationInfo({ id: ev.id, 
+                    onClick={setLocationInfo ? () => setLocationInfo({ 
+                        type: ev.categories[0].id,
+                        id: ev.id, 
                         title: ev.title, 
                         link: ev.link,
                         source: ev.sources[0].url,
@@ -58,7 +63,9 @@ const Map = ({ eventData, center, zoom, loading, setLocationInfo }) => {
                     key={ev.id}
                     lat={ev.geometry[0].coordinates[1]} 
                     lng={ev.geometry[0].coordinates[0]} 
-                    onClick={setLocationInfo ? () => setLocationInfo({ id: ev.id, 
+                    onClick={setLocationInfo ? () => setLocationInfo({ 
+                        type: ev.categories[0].id,
+                        id: ev.id, 
                         title: ev.title, 
                         link: ev.link,
                         source: ev.sources[0].url,
@@ -70,7 +77,9 @@ const Map = ({ eventData, center, zoom, loading, setLocationInfo }) => {
                         key={ev.id}
                         lat={ev.geometry[0].coordinates[1]} 
                         lng={ev.geometry[0].coordinates[0]} 
-                        onClick={setLocationInfo ? () => setLocationInfo({ id: ev.id, 
+                        onClick={setLocationInfo ? () => setLocationInfo({ 
+                            type: ev.categories[0].id,
+                            id: ev.id, 
                             title: ev.title, 
                             link: ev.link,
                             source: ev.sources[0].url,
@@ -82,7 +91,9 @@ const Map = ({ eventData, center, zoom, loading, setLocationInfo }) => {
                     key={ev.id}
                     lat={ev.geometry[0].coordinates[1]} 
                     lng={ev.geometry[0].coordinates[0]} 
-                    onClick={setLocationInfo ? () => setLocationInfo({ id: ev.id, 
+                    onClick={setLocationInfo ? () => setLocationInfo({ 
+                        type: ev.categories[0].id,
+                        id: ev.id, 
                         title: ev.title, 
                         link: ev.link,
                         source: ev.sources[0].url,
@@ -94,7 +105,9 @@ const Map = ({ eventData, center, zoom, loading, setLocationInfo }) => {
                     key={ev.id}
                     lat={ev.geometry[0].coordinates[1]} 
                     lng={ev.geometry[0].coordinates[0]} 
-                    onClick={setLocationInfo ? () => setLocationInfo({ id: ev.id, 
+                    onClick={setLocationInfo ? () => setLocationInfo({ 
+                        type: ev.categories[0].id,
+                        id: ev.id, 
                         title: ev.title, 
                         link: ev.link,
                         source: ev.sources[0].url,
@@ -106,7 +119,9 @@ const Map = ({ eventData, center, zoom, loading, setLocationInfo }) => {
                     key={ev.id}
                     lat={ev.geometry[ev.geometry.length - 1].coordinates[1]} 
                     lng={ev.geometry[ev.geometry.length - 1].coordinates[0]} 
-                    onClick={setLocationInfo ? () => setLocationInfo({ id: ev.id, 
+                    onClick={setLocationInfo ? () => setLocationInfo({ 
+                        type: ev.categories[0].id,
+                        id: ev.id, 
                         title: ev.title, 
                         link: ev.link,
                         source: ev.sources[0].url,
@@ -123,7 +138,9 @@ const Map = ({ eventData, center, zoom, loading, setLocationInfo }) => {
                             key={ev.id + i}
                             lat={ev.geometry[i].coordinates[1]} 
                             lng={ev.geometry[i].coordinates[0]} 
-                            onClick={setLocationInfo ? () => setLocationInfo({ id: ev.id, 
+                            onClick={setLocationInfo ? () => setLocationInfo({ 
+                                type: ev.categories[0].id,
+                                id: ev.id, 
                                 title: ev.title, 
                                 link: ev.link,
                                 source: ev.sources[0].url,
@@ -138,7 +155,9 @@ const Map = ({ eventData, center, zoom, loading, setLocationInfo }) => {
                     key={ev.id}
                     lat={ev.geometry[0].coordinates[1]} 
                     lng={ev.geometry[0].coordinates[0]} 
-                    onClick={setLocationInfo ? () => setLocationInfo({ id: ev.id, 
+                    onClick={setLocationInfo ? () => setLocationInfo({ 
+                        type: ev.categories[0].id,
+                        id: ev.id, 
                         title: ev.title, 
                         link: ev.link,
                         source: ev.sources[0].url,
@@ -150,7 +169,9 @@ const Map = ({ eventData, center, zoom, loading, setLocationInfo }) => {
                     key={ev.id}
                     lat={ev.geometry[0].coordinates[1]} 
                     lng={ev.geometry[0].coordinates[0]} 
-                    onClick={setLocationInfo ? () => setLocationInfo({ id: ev.id, 
+                    onClick={setLocationInfo ? () => setLocationInfo({ 
+                        type: ev.categories[0].id,
+                        id: ev.id, 
                         title: ev.title, 
                         link: ev.link,
                         source: ev.sources[0].url,
@@ -163,7 +184,9 @@ const Map = ({ eventData, center, zoom, loading, setLocationInfo }) => {
                         key={ev.id}
                         lat={ev.geometry[0].coordinates[1]} 
                         lng={ev.geometry[0].coordinates[0]}
-                        onClick={setLocationInfo ? () => setLocationInfo({ id: ev.id, 
+                        onClick={setLocationInfo ? () => setLocationInfo({
+                            type: ev.categories[0].id,
+                            id: ev.id, 
                             title: ev.title, 
                             link: ev.link,
                             source: ev.sources[0].url,
@@ -180,7 +203,9 @@ const Map = ({ eventData, center, zoom, loading, setLocationInfo }) => {
                     key={ev.id}
                     lat={ev.geometry[0].coordinates[1]} 
                     lng={ev.geometry[0].coordinates[0]} 
-                    onClick={setLocationInfo ? () => setLocationInfo({ id: ev.id, 
+                    onClick={setLocationInfo ? () => setLocationInfo({ 
+                        type: ev.categories[0].id,
+                        id: ev.id, 
                         title: ev.title, 
                         link: ev.link,
                         source: ev.sources[0].url,
@@ -192,7 +217,9 @@ const Map = ({ eventData, center, zoom, loading, setLocationInfo }) => {
                     key={ev.id}
                     lat={ev.geometry[0].coordinates[1]} 
                     lng={ev.geometry[0].coordinates[0]} 
-                    onClick={setLocationInfo ? () => setLocationInfo({ id: ev.id, 
+                    onClick={setLocationInfo ? () => setLocationInfo({ 
+                        type: ev.categories[0].id,
+                        id: ev.id, 
                         title: ev.title, 
                         link: ev.link,
                         source: ev.sources[0].url,

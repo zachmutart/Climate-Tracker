@@ -1,8 +1,5 @@
 import React from 'react'
 import { Icon } from '@iconify/react'
-//import sendIcon from '@iconify-icons/grommet-icons/send'
-//import sendIcon from '@iconify-icons/fa/paper-plane'
-//import sendIcon from '@iconify-icons/wpf/paper-plane'
 import sendIcon from '@iconify-icons/cib/telegram-plane'
 import './Input.css'
 

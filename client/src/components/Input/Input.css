@@ -3,6 +3,7 @@
     border-top: 1px solid #c0c0c0;
     max-height: 65px;
     height: 65px;
+    min-height: 65px;
 }
 
 .input {
@@ -29,11 +30,15 @@ input:focus, textarea:focus, select:focus{
     border: none;
     border-radius: 0 0 15px 0;
     width: 20%;
+    transition: all 0.1s ease;
 }
 
 .sendButton:hover {
-    background: #2300a3;
     cursor: pointer;
+}
+
+.sendButton:active {
+    background: #2300a3;
 }
 
 .sendIcon {
@@ -54,6 +59,7 @@ input:focus, textarea:focus, select:focus{
 @media screen and (max-width: 600px) {
     .form {
         height: 50px;
+        min-height: 50px;
     }
 
     .input {

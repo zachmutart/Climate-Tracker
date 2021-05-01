@@ -52,15 +52,6 @@ function Navbar() {
                                 Chatroom
                             </Link>
                         </li>
-                        <li className='nav-item'>
-                            <Link
-                                to='/conservation'
-                                className='nav-links'
-                                onClick={() => setClick(false)}
-                            >
-                                Conservation
-                            </Link>
-                        </li>
                     </ul>
                 </nav>
             </IconContext.Provider>

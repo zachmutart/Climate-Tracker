@@ -5,6 +5,7 @@
     background: #5729ff;
     border-radius: 10px 10px 0 0;
     height: 60px;
+    min-height: 50px;
     width: 100%;
     letter-spacing: 1px;
 }

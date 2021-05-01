@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react'
 import video from '../../video/earth_bg.mp4'
 import './Landing.css'
 
-const phrases = ["Earth", "our planet", "our home", "our children's future", "our chance to do what is right."]
+const phrases = ["Earth", "our home", "our children's future", "our final chance to do right and preserve this resource."]
 
 const Landing = () => {
     const [index, setIndex] = useState(0)
@@ -49,9 +49,9 @@ const Landing = () => {
     return (
         <div className="outerLandingContainer">
             <h1 className="typewriter">
-                { `This is ${phrases[index].substring(0, subIndex)}${blink ? "|" : " "}` }
+                { `This is ${phrases[index].substring(0, subIndex)}${blink ? "|" : "\u00A0"}` }
             </h1>
-            {/* To Do */}
+            { index === phrases.length}
             <a href="https://www.pexels.com/photo/a-view-of-planet-earth-from-outer-space-7094565/"
             target={"_blank"} rel="noopener noreferrer">Video by jol acen from Pexels</a>
             <video id="video" className="video" src={video} autoPlay playsInline></video>
