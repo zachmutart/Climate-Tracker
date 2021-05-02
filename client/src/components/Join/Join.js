@@ -7,7 +7,7 @@ import './Join.css'
  * Join component -
  * 
  * The main interface for the chatroom join page. Allows user to select a
- * username and chatroom and navigates to that url
+ * username and chatroom and navigates to a url with that query.
  *  
  */
 const Join = ( ) => {

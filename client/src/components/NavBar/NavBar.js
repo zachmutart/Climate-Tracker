@@ -11,12 +11,13 @@ import './NavBar.css'
  * NavBar component -
  * 
  * The navigation bar component with standard collapsed menu with icon
- * for smaller display devices
+ * for smaller display devices.
  * 
  */
 function Navbar() {
     const [click, setClick] = useState(false)
 
+    // Return JSX for the NavBar component with Links to URLs
     return (
         <>
             <IconContext.Provider value={{ color: '#fff' }}>
@@ -59,4 +60,5 @@ function Navbar() {
     )
 }
 
+// Export the NavBar component
 export default Navbar

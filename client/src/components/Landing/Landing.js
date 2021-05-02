@@ -2,8 +2,15 @@ import React, { useState, useEffect } from 'react'
 import video from '../../video/earth_bg.mp4'
 import './Landing.css'
 
-const phrases = ["Earth", "our home", "our children's future", "our final chance to do right and preserve this resource."]
+const phrases = ["Earth", "our home", "our children's future", "an opportunity to preserve this vital resource, together."]
 
+
+/**
+ * Landing component -
+ * 
+ * The main landing page for the web application.
+ * 
+ */
 const Landing = () => {
     const [index, setIndex] = useState(0)
     const [subIndex, setSubIndex] = useState(0)
@@ -19,7 +26,7 @@ const Landing = () => {
             index !== phrases.length - 1 && !reverse) {
             const timer = setTimeout(() => {
                 setReverse(true)
-            }, 1250)
+            }, 500)
             return () => clearTimeout(timer)
         }
 
@@ -33,12 +40,13 @@ const Landing = () => {
         // timeout values for typing effect
         const timeout = setTimeout(() => {
             setSubIndex((prev) => prev + (reverse ? -1 : 1))
-        }, Math.max(reverse ? 70 : subIndex === phrases[index].length ? 1000 : 100, 
+        }, Math.max(reverse ? 70 : subIndex === phrases[index].length ? 500 : 100, 
             parseInt(Math.random() * 250)))
 
         return () => clearTimeout(timeout)
     }, [subIndex, index, reverse])
 
+    // Control blinking of the cursor
     useEffect(() => {
         const timeout2 = setTimeout(() => {
             setBlink ((prev) => !prev)
@@ -46,12 +54,13 @@ const Landing = () => {
         return () => clearTimeout(timeout2)
     }, [blink])
 
+    // Return JSX for the Landing component
     return (
         <div className="outerLandingContainer">
             <h1 className="typewriter">
                 { `This is ${phrases[index].substring(0, subIndex)}${blink ? "|" : "\u00A0"}` }
             </h1>
-            { index === phrases.length}
+            { index === phrases.length ? null : null }
             <a href="https://www.pexels.com/photo/a-view-of-planet-earth-from-outer-space-7094565/"
             target={"_blank"} rel="noopener noreferrer">Video by jol acen from Pexels</a>
             <video id="video" className="video" src={video} autoPlay playsInline></video>
@@ -59,4 +68,5 @@ const Landing = () => {
     )
 }
 
+// Export the Landing component
 export default Landing

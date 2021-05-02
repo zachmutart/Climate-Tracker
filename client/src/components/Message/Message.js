@@ -2,14 +2,25 @@ import React from 'react'
 import ReactEmoji from 'react-emoji'
 import './Message.css'
 
+
+/**
+ * Message component -
+ * 
+ * The component for the messages exchanged in the chatroom. Determines
+ * if the message is sent from the current user or another user in the
+ * chatroom to determine the Message component layout and class name.
+ * 
+ */
 const Message = ({ message: { user, text }, name }) => {
     let isSentByCurrentUser = false
     const trimmedName = name.trim().toLowerCase()
 
+    // Determine if the current user sent the message
     if (user === trimmedName) {
         isSentByCurrentUser = true;
     }
 
+    // Return JSX for the Message component based on who sent message
     return (
         isSentByCurrentUser
             ? (
@@ -31,4 +42,5 @@ const Message = ({ message: { user, text }, name }) => {
     )
 }
 
+// Export the Message component
 export default Message

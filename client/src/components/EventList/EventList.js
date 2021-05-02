@@ -1,11 +1,18 @@
 import React from 'react'
 import Event from '../Event/Event'
 import spinner from '../../img/spinner.gif'
-
 import './EventList.css'
 
+/**
+ * EventList component -
+ * 
+ * Maps the API eventData to a Event component and creates a scrollable
+ * list of Events on the Chat view
+ * 
+ */
 const EventList = ({ eventData, loading, setLocationInfo }) => {
 
+    // Map the events in eventData to a Event component with relevant params
     const events = eventData.map(ev => {
         return <div className="eventContainer" key={ ev.id }>
                     <Event event={ ev } 
@@ -17,6 +24,7 @@ const EventList = ({ eventData, loading, setLocationInfo }) => {
                 </div>
     })
 
+    // Return JSX for the EventList component
     return (
         <div className="eventListContainer">
             { loading ? <img className="loading" src={ spinner } alt="Loading" /> : events }
@@ -24,4 +32,5 @@ const EventList = ({ eventData, loading, setLocationInfo }) => {
     )
 }
 
+// Export the EventList
 export default EventList

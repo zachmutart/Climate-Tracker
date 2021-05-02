@@ -13,7 +13,7 @@ import './EventInfo.css'
  */
 const EventInfo = ({ info, onClick }) => {
     
-    // create search link URL
+    // Create search link URL
     const searchLink = `https://www.google.com/search?q=${info.title.replace(" ", "%20")}`
 
     // Return JSX for the event information component

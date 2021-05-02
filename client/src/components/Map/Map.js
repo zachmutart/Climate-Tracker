@@ -232,7 +232,7 @@ const Map = ({ eventData, center, zoom, loading, setLocationInfo }) => {
     })
     const TOK = 'AIzaSyClkr13c3ZAqlzA37j3U5HgudR-XbNQsEE'
 
-    // return the GoogleMapReact component with default properties defined below
+    // Return JSX for the GoogleMapReact component with defined properties
     return (
         <div className="map">
 

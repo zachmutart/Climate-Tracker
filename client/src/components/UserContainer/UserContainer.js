@@ -2,6 +2,14 @@ import React from 'react'
 import onlineIcon from '../../img/online.png'
 import './UserContainer.css'
 
+/**
+ * UserContainer component -
+ * 
+ * The active users component that appears next to the
+ * Chat component on the main Chatroom view. Displays all
+ * active users in a particular chatroom.
+ * 
+ */
 const UserContainer = ({ users }) => (
         <div className="userContainer">
             { 
@@ -27,4 +35,5 @@ const UserContainer = ({ users }) => (
         
 )
 
+// Export the UserContainer component
 export default UserContainer

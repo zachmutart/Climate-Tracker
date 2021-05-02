@@ -7,8 +7,17 @@ import Landing from './components/Landing/Landing'
 import NavBar from './components/NavBar/NavBar'
 import './App.css'
 
+/**
+ * App component -
+ * 
+ * The main component for the web application. The App
+ * component is placed at the root of the index.html file in
+ * the public directory when called by the index.js file.
+ * 
+ */
 const App = () => {
 
+    // Return JSX (Router) the for App component
     return (
         <Router>
             <NavBar />
@@ -22,4 +31,5 @@ const App = () => {
     )
 }
 
+// Export the App Component
 export default App;

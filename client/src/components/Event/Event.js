@@ -14,13 +14,21 @@ import snowIcon from '@iconify-icons/map/snow'
 import stormIcon from '@iconify/icons-mdi/weather-hurricane'
 import volcanoIcon from '@iconify-icons/wi/volcano'
 import waterIcon from '@iconify/icons-mdi/water-alert'
-
 import './Event.css'
 
+/**
+ * Event component -
+ * 
+ * The component representing each individual event for the event list on the 
+ * Chat view
+ * 
+ */
 const Event = ({ event, onClick }) => {
 
     let icon, clss
 
+    // determine the icon and class names of the JSX component based on the
+    // event category
     switch(event.categories[0].id) {
         case "drought":
             icon = droughtIcon
@@ -78,6 +86,7 @@ const Event = ({ event, onClick }) => {
             break;
     }
 
+    // Return JSX for the Event component
     return (
         <div className="eventWrapper" onClick={ onClick }>
             <div className="eventLeftContainer">
@@ -91,4 +100,5 @@ const Event = ({ event, onClick }) => {
     )
 }
 
+// Export the Event component
 export default Event

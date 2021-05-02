@@ -28,7 +28,7 @@ const MapView = () => {
         fetchEvents()
     }, [])
 
-    // Return JSX for the map view component
+    // Return JSX for the MapView component
     return (
         <div className="outerMapViewContainer">
             <Map id="bigMap" eventData={ eventData } loading={ loading } setLocationInfo={ setLocationInfo } />

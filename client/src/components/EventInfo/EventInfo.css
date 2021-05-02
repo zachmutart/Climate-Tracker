@@ -35,14 +35,14 @@
 
 .detailPara {
     font-size: 1.1rem;
-    font-style: italic;
+    line-height: 1.4rem;
     margin: 10px 20px;
 }
 
 .orgsList {
     display: flex;
     flex-direction: column;
-    margin: 20px 20px;
+    margin: 10px 40px;
     text-decoration: none;
 }
 
@@ -146,11 +146,6 @@
 @media screen and (max-width: 1300px) {
     .eventInfoInnerContainer > h2 {
         font-size: 2rem;
-    }
-
-    .information {
-        font-size: 1.5rem;
-        line-height: 1.8rem;
     }
 
     .externalLink {

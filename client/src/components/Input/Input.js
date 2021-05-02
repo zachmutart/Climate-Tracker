@@ -3,6 +3,14 @@ import { Icon } from '@iconify/react'
 import sendIcon from '@iconify-icons/cib/telegram-plane'
 import './Input.css'
 
+/**
+ * Input component -
+ * 
+ * The message input form for the Chat component. Has a placeholder
+ * for the user text and a button to send the message. Also recognizes
+ * 'Enter' keypresses for sending messages.
+ * 
+ */
 const Input = ({ message, setMessage, sendMessage }) => (
     <form className="form">
         <input 
@@ -22,4 +30,5 @@ const Input = ({ message, setMessage, sendMessage }) => (
 
 )
 
+// Export the Input component
 export default Input
